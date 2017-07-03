@@ -1,0 +1,12 @@
+## Part 1
+- What the hell is going on?
+  - What do you start looking at?
+
+- Why does tick take future?
+  A: Boards are somewhat expensive, so we're reusing them. Tick therefore
+     can't return a Board (it would have to allocate it), so it takes a Board
+     to write its output into.
+- In a forEach, what does this refer to?
+  A: Global. You can also specify:
+    [1].forEach(function() { console.log(this) }, 'hello')
+  will print 'hello'
