@@ -28,3 +28,6 @@ td.dead {
   margin: 10px auto;
   text-align: center;
 }
+#play_btn {
+  width:65px;
+}
