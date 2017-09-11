@@ -19,6 +19,12 @@ function Life(container, width=12, height=12) {
   var table = createTable();
   container.appendChild(table);
 
+  //default cells
+  [[0, 1], [1, 2], [2, 0], [2, 1], [2, 2]].forEach(el => {
+    present.setAlive(el);
+    paint()
+  })
+
   table.addEventListener('mousedown', toggleCellFromEvent)
 
   function createTable() {
@@ -41,7 +47,6 @@ function Life(container, width=12, height=12) {
 
   function toggleCellFromEvent(event) {
     present.toggle(event.target.coord)
-    //console.log('present',present.cells);
     paint()
   }
 
@@ -53,7 +58,7 @@ function Life(container, width=12, height=12) {
   }
 
   function step(rules) {
-    ;[present, future] = tick(present, future, rules);  // tick is from board.js
+    [present, future] = tick(present, future, rules);  // tick is from board.js
     paint();
   }
   var playInterval = null;
@@ -82,7 +87,7 @@ function Life(container, width=12, height=12) {
   }
 
   function random() {
-    step(function() {return Math.random() <= 0.3});
+    step(function() {return Math.random() <= 0.2});
     play();
   }
 

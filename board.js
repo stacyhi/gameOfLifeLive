@@ -40,6 +40,10 @@ Board.prototype.toggle = function(coords) {
   this.set(coords, !val);
 }
 
+Board.prototype.setAlive = function(coords) {
+  this.set(coords, 1);
+}
+
 function conway(isAlive, numLivingNeighbors) {
   if (isAlive) {
     if (numLivingNeighbors < 2 || numLivingNeighbors > 3) return false;
